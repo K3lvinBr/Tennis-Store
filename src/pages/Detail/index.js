@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Image, ScrollView, StyleSheet } from 'react-native';
 
 import Dot from '../../component/Dot'
@@ -11,6 +11,8 @@ export default function Detail({ navigation }) {
   navigation.setOptions({
     headerTitle: 'Nike Downshifter 10'
   })
+
+  const [sizeToggle, setSizeToggle] = useState('40')
 
   return (
     <ScrollView style={styles.container}>
@@ -37,10 +39,10 @@ export default function Detail({ navigation }) {
 
         <View style={{flexDirection: 'row', width: '100%'}}>
         	<ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            <SizeButton bgColor='#17181A' color='#FFF'>40</SizeButton>
-            <SizeButton>37</SizeButton>
-            <SizeButton>39</SizeButton>
-            <SizeButton>42</SizeButton>
+            <SizeButton sizeToggle={sizeToggle} setSizeToggle={setSizeToggle}>40</SizeButton>
+            <SizeButton sizeToggle={sizeToggle} setSizeToggle={setSizeToggle}>37</SizeButton>
+            <SizeButton sizeToggle={sizeToggle} setSizeToggle={setSizeToggle}>39</SizeButton>
+            <SizeButton sizeToggle={sizeToggle} setSizeToggle={setSizeToggle}>42</SizeButton>
           </ScrollView>
         </View>
 

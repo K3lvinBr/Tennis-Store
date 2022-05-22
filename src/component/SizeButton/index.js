@@ -5,9 +5,10 @@ export default function SizeButton(props) {
 
     return (
         <TouchableOpacity
-            style={[styles.container, { backgroundColor: props.bgColor || '#FFF' }]}>
+            onPress={() => (props.setSizeToggle(props.children))}
+            style={[styles.container, { backgroundColor: props.sizeToggle === props.children ? '#17181A' : '#FFF' }]}>
 
-            <Text style={[styles.text, { color: props.color || '#C9C' }]}>
+            <Text style={[styles.text, { color: props.sizeToggle === props.children ? '#FFF' : '#C9C' }]}>
                 {props.children}
             </Text>
 
